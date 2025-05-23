@@ -1,0 +1,5 @@
+[project]
+name = "aai-agency-og"
+version = "0.0.1"
+description = "Open source scripts for the O&G industry"
+readme = "README.md"
