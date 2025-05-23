@@ -1,3 +1,7 @@
+"""
+This script downloads all the papers from the SWPS short course.
+"""
+
 import os
 import time
 import requests
