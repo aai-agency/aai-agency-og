@@ -1,6 +1,6 @@
 # Welcome to aai 👋
 
-Welcome to aai!🎉 We’re an agency focused on automating Oil & Gas workflows from manual Excel processes to building full AI Workflows & Agents.
+Welcome to aai!🎉 We’re an agency focused on automating Oil & Gas business workflows from manual Excel processes to building AI Workflows & Agents.
 
 This repo includes real workflows we’ve built and used. We’re sharing them here in case they’re helpful to others in the industry.
 
