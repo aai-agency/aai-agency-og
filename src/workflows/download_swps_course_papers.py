@@ -3,10 +3,11 @@ This script downloads all the papers from the SWPS short course.
 """
 
 import os
-import time
 import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from urllib.parse import urljoin
 import logging
 
@@ -57,8 +58,9 @@ def download_paper(url, filename):
 
 def main():
     base_url = "https://www.swpshortcourse.org/papers"
-    page = 1
+    page = 0
     driver = setup_driver()
+    wait = WebDriverWait(driver, 10)
 
     try:
         while True:
@@ -66,10 +68,12 @@ def main():
             logger.info(f"Processing page {page}")
 
             driver.get(url)
-            time.sleep(2)  # Wait for page to load
 
-            # Find all elements with text "Download"
-            download_links = driver.find_elements(By.XPATH, "//a[text()='Download']")
+            download_links = wait.until(
+                EC.presence_of_all_elements_located(
+                    (By.XPATH, "//a[text()='Download']")
+                )
+            )
 
             if not download_links:
                 logger.info("No more papers found. Ending download process.")
